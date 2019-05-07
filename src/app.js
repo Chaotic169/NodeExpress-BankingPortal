@@ -45,7 +45,7 @@ app.post('/transfer', (req, res) => {
     res.render('transfer', { message: 'Transfer Completed' });
 });
 
-app.get('/payment', (req, res) => res.render('payment', { account: account.credit}));
+app.get('/payment', (req, res) => res.render('payment', { account: accounts.credit}));
 app.post('/payment', (req, res) => {
     accounts.credit.balance -= req.body.amount;
     accounts.credit.available += parseInt(req.body.amount, 10);
